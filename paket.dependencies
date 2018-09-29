@@ -1,0 +1,12 @@
+source https://api.nuget.org/v3/index.json
+storage: none
+nuget log4net >= 2.0.8
+
+group Build
+  source https://api.nuget.org/v3/index.json
+  storage: none
+
+  nuget FAKE
+  nuget Fake.IO.FileSystem
+  nuget Fake.DotNet.MSBuild
+  nuget Fake.Core.Target

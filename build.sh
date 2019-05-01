@@ -2,6 +2,8 @@
 
 set -e
 
+rm -rf ./paket-files
+
 paket restore
 git checkout .paket/Paket.Restore.targets
 fake run myscript.fsx

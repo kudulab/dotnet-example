@@ -1,3 +1,0 @@
-IDE_DRIVER=docker
-# actually an image with paket and fake installed globally is also needed
-IDE_DOCKER_IMAGE="tomzo/dotnet-ide:2.0.0"

@@ -1,0 +1,2 @@
+IDOJO_DRIVER=docker
+DOJO_DOCKER_IMAGE="kudulab/dotnet-dojo:3.1.3"

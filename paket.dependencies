@@ -1,12 +1,9 @@
 source https://api.nuget.org/v3/index.json
 storage: none
+framework: netstandard20
+
 nuget log4net >= 2.0.8
 
-group Build
-  source https://api.nuget.org/v3/index.json
-  storage: none
-
-  nuget FAKE
-  nuget Fake.IO.FileSystem
-  nuget Fake.DotNet.MSBuild
-  nuget Fake.Core.Target
+nuget xunit
+nuget xunit.runner.console 2.4.1
+nuget Microsoft.NET.Test.Sdk

@@ -1,0 +1,5 @@
+log4net
+
+xunit.runner.console
+xunit
+Microsoft.NET.Test.Sdk

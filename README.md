@@ -1,9 +1,21 @@
-# Pake and FAKE on dotnet core
+# dotnet-example
 
-This is a spike proving that it is possible to use paket, FAKE and build dotnet
-projects using a dotnet SDK without mono.
+This is an example dotnet project (a spike) which uses [Paket](https://fsprojects.github.io/Paket/index.html)
+ and [Dojo](https://github.com/kudulab/dojo) in order to build dotnet projects using a dotnet SDK without mono.
 
-## Caveats
+## Operations
 
-Paket is a super early release. It generates invalid/inconvenient `.paket/Paket.Restore.targets`
- and I had to patch it so that bootstrapper is not executed ever and globally installed `paket` cli is used.
+Compile the code:
+```
+./tasks build
+```
+
+Run unit tests:
+```
+./tasks utest
+```
+
+Run the dotnet application:
+```
+./tasks run
+```

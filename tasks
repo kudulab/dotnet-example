@@ -1,0 +1,24 @@
+#!/bin/bash
+
+command="$1"
+case "${command}" in
+  build)
+      rm -rf src/*/bin/* src/*/obj/*
+      dotnet publish --configuration=Release --output=./bin/Release
+      exit $?
+      ;;
+  run)
+      dotnet run --configuration=Release --project=./src/app/ --no-build
+      exit $?
+      ;;
+  utest)
+      rm -rf tests/*/bin/* tests/*/obj/*
+      dotnet test --configuration=Release ./tests/lib.Tests -v=normal
+      exit $?
+      ;;
+  *)
+      echo "Invalid command: '${command}'"
+      exit 1
+      ;;
+esac
+set +e

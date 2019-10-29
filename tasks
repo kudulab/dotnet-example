@@ -1,0 +1,31 @@
+#!/bin/bash
+
+command="$1"
+case "${command}" in
+  clean)
+      find . -type d -name bin -exec rm -r {} \;
+      find . -type d -name obj -exec rm -r {} \;
+      rm -r ./packages/
+      rm -r ./paket-files/
+      rm -r ~/.nuget/packages/
+      ;;
+  build)
+      # restore packages and build the whole solution
+      dotnet publish --configuration=Release --output=./bin/Release
+      exit $?
+      ;;
+  run)
+      dotnet run --configuration=Release --project=./src/app/ --no-build
+      exit $?
+      ;;
+  utest)
+      # this task does compile the test project
+      dotnet test --configuration=Release --no-build ./tests/app.Tests
+      exit $?
+      ;;
+  *)
+      echo "Invalid command: '${command}'"
+      exit 1
+      ;;
+esac
+set +e

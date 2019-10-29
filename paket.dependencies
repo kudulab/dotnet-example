@@ -1,12 +1,21 @@
 source https://api.nuget.org/v3/index.json
-storage: none
+storage: packages
+
 nuget log4net >= 2.0.8
 
 group Build
   source https://api.nuget.org/v3/index.json
-  storage: none
+  storage: packages
 
   nuget FAKE
   nuget Fake.IO.FileSystem
   nuget Fake.DotNet.MSBuild
   nuget Fake.Core.Target
+
+group Test
+  source https://api.nuget.org/v3/index.json
+  storage: packages
+
+  nuget xunit
+  # nuget xunit.runner.console 2.4.1 version_in_path: true
+  nuget xunit.runner.visualstudio

@@ -1,0 +1,2 @@
+DOJO_DOCKER_IMAGE="kudulab/dotnet-dojo:stretch-3.1.4"
+DOJO_DOCKER_OPTIONS="-v $(pwd)/nuget-packages:/home/dojo/.nuget/packages"

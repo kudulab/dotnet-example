@@ -1,0 +1,42 @@
+format_version: 3
+pipelines:
+  dotnet-example:
+    group: dotnet
+    label_template: "${git[:8]}"
+    materials:
+      git:
+        type: configrepo
+        blacklist:
+          - "**/*.md"
+    secure_variables:
+      VAULT_TOKEN: "AES:zIx1c3DrJzb61CM0TOZR8A==:zswLG36g5wCrIyu4IdEu02Ga/Lq/b/ZSeRUp7ngNnTM="
+    stages:
+      - build:
+          clean_workspace: true
+          resources:
+            - docker
+          jobs:
+            build_with_fake:
+              tasks:
+                - exec:
+                    command: dojo
+                    arguments:
+                      - ./build.sh
+            build_without_fake:
+              # this job could be split into 3 jobs
+              tasks:
+                - exec:
+                    command: /bin/bash
+                    arguments:
+                      - -c
+                      - ./tasks build
+                - exec:
+                    command: /bin/bash
+                    arguments:
+                      - -c
+                      - ./tasks utest
+                - exec:
+                    command: /bin/bash
+                    arguments:
+                      - -c
+                      - ./tasks run

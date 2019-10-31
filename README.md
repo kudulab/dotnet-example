@@ -25,7 +25,7 @@ Thanks to mounting the docker volume `-v $(pwd)/nuget-packages:/home/dojo/.nuget
 ## Usage without FAKE, locally
 Compile all projects of the C# solution:
 ```
-./tasks _clean
+./tasks clean
 ./tasks _build
 ```
 

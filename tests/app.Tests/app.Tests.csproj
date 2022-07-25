@@ -1,14 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="xunit" Version="2.3.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
+    <PackageReference Include="log4net" Version="2.0.14" />
+    <!-- https://developercommunity.visualstudio.com/t/after-update-to-vs2022-release-testhost-stopped-wo/1577685 -->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0-preview-20211109-03"/>
   </ItemGroup>
 
   <ItemGroup>

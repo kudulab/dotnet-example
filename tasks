@@ -27,7 +27,7 @@ case "${command}" in
       exit $?
       ;;
   _utest)
-      tests=$(dotnet test --configuration=Release --no-build --list-tests ./tests/app.Tests)
+      tests=$(set -x; dotnet test --configuration=Release --no-build --list-tests ./tests/app.Tests)
       if [[ "${tests}" == "" ]]; then
         echo "No tests found"
         exit 1

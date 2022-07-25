@@ -19,3 +19,4 @@ group Test
   nuget xunit
   # nuget xunit.runner.console 2.4.1 version_in_path: true
   nuget xunit.runner.visualstudio
+  nuget Microsoft.NET.Test.Sdk

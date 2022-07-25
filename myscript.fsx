@@ -30,7 +30,7 @@ Target.create "BuildApp" (fun _ ->
             Properties =
                 [
                     "Optimize", "True"
-                    "TargetFramework", "netcoreapp2.2"
+                    "TargetFramework", "net6.0"
                     "Configuration", "Release"
                 ]
          }

@@ -19,7 +19,8 @@ case "${command}" in
       exit $?
       ;;
   _run)
-      dotnet run --configuration=Release --project=./src/app/ --no-build
+      # TODO: add --no-build so that we do not recreate the artifacts
+      dotnet run --configuration=Release --project=./src/app/
       exit $?
       ;;
   run)

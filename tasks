@@ -37,7 +37,7 @@ case "${command}" in
       exit $?
       ;;
   unit)
-      dojo "./tasks _utest"
+      dojo "./tasks _unit"
       exit $?
       ;;
   *)

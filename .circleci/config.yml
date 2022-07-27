@@ -3,25 +3,35 @@ version: 2.1
 workflows:
   dotnet-example:
     jobs:
-      - compile
+      - build
       - unit:
           requires:
-            - compile
+            - build
+      - run:
+          requires:
+            - unit
 
 jobs:
-  compile:
+  build:
     executor: platform
     steps:
       - setup
       - run:
-          command: dojo "dotnet publish --configuration=Release --output=./bin/Release"
+          command: ./tasks build
 
   unit:
     executor: platform
     steps:
       - setup
       - run:
-          command: dojo "dotnet test --configuration=Release ./tests/app.Tests"
+          command: ./tasks unit
+
+  run:
+    executor: platform
+    steps:
+      - setup
+      - run:
+          command: ./tasks run
 
 
 commands:

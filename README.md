@@ -12,7 +12,7 @@ Compile all projects of the C# solution:
 
 Run tests (without rebuilding the test project):
 ```
-./tasks utest
+./tasks unit
 ```
 
 Run the console application project:
@@ -31,7 +31,7 @@ Compile all projects of the C# solution:
 
 Run tests (without rebuilding the test project):
 ```
-./tasks _utest
+./tasks _unit
 ```
 
 Run the console application project:

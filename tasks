@@ -28,13 +28,14 @@ case "${command}" in
       exit $?
       ;;
   _unit)
-      tests=$(set -x; dotnet test --configuration=Release --no-build --list-tests ./tests/app.Tests)
+      # TODO: add --no-build so that we do not recreate the artifacts
+      tests=$(set -x; dotnet test --configuration=Release --list-tests ./tests/app.Tests)
       if [[ "${tests}" == "" ]]; then
         echo "No tests found"
         exit 1
       fi
-      # this task does NOT compile the test project
-      dotnet test --configuration=Release --no-build ./tests/app.Tests
+      # TODO: add --no-build so that we do not recreate the artifacts
+      dotnet test --configuration=Release ./tests/app.Tests
       exit $?
       ;;
   unit)

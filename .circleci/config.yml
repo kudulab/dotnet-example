@@ -1,7 +1,7 @@
 version: 2.1
 
 workflows:
-  docker-dotnet-dojo:
+  dotnet-example:
     jobs:
       - compile
       - unit:
@@ -22,3 +22,15 @@ jobs:
       - setup
       - run:
           command: dojo "dotnet test --configuration=Release ./tests/app.Tests"
+
+
+commands:
+  setup:
+    steps:
+      - checkout
+
+executors:
+  platform:
+    machine:
+      image: ubuntu-2004:202101-01
+    working_directory: ~/repo
